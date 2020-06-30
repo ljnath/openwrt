@@ -1027,6 +1027,19 @@ define Device/trendnet_tew-810dr
 endef
 TARGET_DEVICES += trendnet_tew-810dr
 
+define Device/tplink_c5-v4
+  $(Device/Archer)
+  DTS := ArcherC5v4
+  TPLINK_FLASHLAYOUT := 8Mmtk
+  TPLINK_HWID := 0x04DA857C
+  TPLINK_HWREV := 0x0C000600
+  TPLINK_HWREVADD := 0x04000000
+  IMAGES += factory.bin
+  DEVICE_TITLE := TP-Link Archer C5 v4
+  DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci kmod-usb-ledtrig-usbport kmod-mt76x2 kmod-switch-rtl8367s
+endef
+TARGET_DEVICES += tplink_c5-v4
+
 define Device/vonets_var11n-300
   SOC := mt7620n
   IMAGE_SIZE := 3776k

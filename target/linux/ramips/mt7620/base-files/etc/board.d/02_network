@@ -348,6 +348,10 @@ ramips_setup_macs()
 	tplink,archer-mr200)
 		wan_mac=$(macaddr_add "$(mtd_get_mac_binary rom 0xf100)" 1)
 		;;
+	tplink,c5-v4)
+		ucidef_add_switch "switch1" \
+			"0:lan" "1:lan" "2:lan" "3:lan" "4:wan" "5@eth0"
+		;;
 	zbtlink,zbt-we1026-5g-16m)
 		label_mac=$(mtd_get_mac_binary factory 0x4)
 		;;

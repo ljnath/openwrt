@@ -195,6 +195,11 @@ tplink,archer-mr200)
 tplink,re200-v1)
 	ucidef_set_led_netdev "lan" "lan" "$boardname:green:lan" "eth0"
 	;;
+tplink,c5-v4)
+	ucidef_set_led_netdev "lan" "lan" "$boardname:green:lan" "eth0.1"
+	ucidef_set_led_netdev "wan" "wan" "$boardname:green:wan" "eth0.2"
+	ucidef_set_led_netdev "wlan2g" "wlan2g" "$boardname:green:wlan2g" "wlan1"
+	;;
 youku,yk1)
 	set_wifi_led "$boardname:blue:air"
 	ucidef_set_led_switch "wan" "wan" "$boardname:blue:wan" "switch0" "0x10"
